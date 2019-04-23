@@ -14,6 +14,7 @@ window.onload = function () {
 
 var intervalId;
 var correctCount = 0;
+var numberDone = 0;
 var clockRunning = false;
 var correctCount = 0;
 var wrongCount = 0;
@@ -59,11 +60,13 @@ var runQuestions = {
     picked = runQuestions.correctAnswers[chosenQuestion];
     runQuestions.Answers();
 
+
   },
 
   Answers: function () {
 
     $( "#gameChoices" ).empty();
+    
     $.each(runQuestions.answers[chosenQuestion], function( i, val ) {
       var createQuestions = $("<button>");
       createQuestions.text(val)
@@ -79,6 +82,7 @@ var runQuestions = {
   WinOrLoose: function () {
     userGuess = $(this).attr("data-answer");
     countDown.stop();
+    numberDone++;
 
     // correct guess or wrong guess outcomes
       if (userGuess == picked) {
@@ -109,11 +113,29 @@ var runQuestions = {
     $("#image").html("<img src = assets/images/lyric" + (chosenQuestion) + ".jpeg alt='Smiley face'>");
     $( "#header" ).empty();
     chosenQuestion++
-    $("#continue").click(runQuestions.Questions);
 
+    if(numberDone == 10){
+      console.log(numberDone)
+      runQuestions.Done();
+      
+    } else{
+      console.log("less then" + numberDone)
+      $("#continue").click(runQuestions.Questions);
   }
+  },
+
+Done: function () {
+  $("#continue").hide();
+  $("#end").show();
+}
 
 };
+
+$(document).ready(function(){
+  $("#Restart").click(function(){
+      location.reload(true);
+  });
+});
 
 // Our stopwatch object
 var countDown = {

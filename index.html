@@ -19,10 +19,10 @@
         <h1 id="title">Finish the Tune...</h1>
         <div id="gameHeader">
           <div class="left timer">
-            <div class="container">TIME: <span id="timerDisplay"></span></div>
+            <div class="container">TIME: <span id="timerDisplay">30</span></div>
           </div>
           <div class="left score">
-            <div class="container">SCORE: <span id="displayScore"></span></div>
+            <div class="container">SCORE: <span id="displayScore">0</span></div>
           </div>
         </div>
         <div id="header" class="questions"></div>
@@ -40,10 +40,16 @@
               <div>
                   <br>
                 <button id="continue">Continue</button>
+                <div id="end">
+                  <p>Your score is: <span id="endScore"></span></p>
+                  <button id="Restart" onclick="reloadPage();" >PLAY AGAIN!</button>
+                </div>
+                
               </div>
             </div>
           </div>
         </div>
+       
 
         <button id="startButton">START</button>
 
