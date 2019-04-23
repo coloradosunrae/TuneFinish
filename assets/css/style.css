@@ -5,8 +5,12 @@ body{
     height: 100%;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     font-weight: 400;
+
   }
   
+  #title{
+    color: #ff5722;
+  }
   /* Stage Structure Styles */
   
   #stage {
@@ -33,11 +37,13 @@ body{
     width: 100%;
     padding: 20px;
     text-align: center;
+
   }
 
   #header{
     display: block;
     padding: 20px;
+    color: #ff5722;
   }
   
   /* Core Game Element Styles */
